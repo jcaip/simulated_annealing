@@ -6,12 +6,14 @@ import matplotlib.animation as animation
 num_points = 10
 
 def start():
+    #set up enviorment and create points
     temp, coolingRate = 1000, 0.0002
     locs = np.random.randint(0, 20, size=(num_points,2))
-    print(locs)
+
+    #create the starting path
     startingPath = np.insert(np.random.permutation(num_points-1) +1, 0, 0)
     currentPath = startingPath
-
+    # array to keep track of the distances
     distance = []
 
     while(temp>1):
@@ -63,7 +65,6 @@ def getNeighbors(path_in):
     path = list(path_in)
     index1, index2 = np.random.choice(path, size=(2,1), replace=True)
     path[index1:index2] = reversed(path[index1:index2])
-
     return path
 
 if __name__ == "__main__":
