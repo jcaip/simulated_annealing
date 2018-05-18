@@ -3,12 +3,12 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
 
-num_points = 10
+num_points = 100
 
 def start():
     #set up enviorment and create points
     temp, coolingRate = 1000, 0.0002
-    locs = np.random.randint(0, 20, size=(num_points,2))
+    locs = np.random.randint(0, 200, size=(num_points,2))
 
     #create the starting path
     startingPath = np.insert(np.random.permutation(num_points-1) +1, 0, 0)
